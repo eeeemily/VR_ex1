@@ -40,9 +40,10 @@ public class rotateScript : MonoBehaviour
         {
             m_Transform.Rotate(Vector3.up, 1.0f);
         }
+        //rotate with mouse!
 
-        m_Transform.Rotate(Vector3.up, Input.GetAxis("Mouse X"));
-        m_Transform.Rotate(Vector3.left, Input.GetAxis("Mouse Y"));
+        // m_Transform.Rotate(Vector3.up, Input.GetAxis("Mouse X"));
+        // m_Transform.Rotate(Vector3.left, Input.GetAxis("Mouse Y"));
 
     }
 
