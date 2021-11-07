@@ -8,7 +8,7 @@ public class MoveScript : MonoBehaviour
 
     private float horizontalInput;
     private float verticalInput;
-    public float speed = 10.0f;
+    public float speed = 1.0f;
     public void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -16,6 +16,25 @@ public class MoveScript : MonoBehaviour
 
     public void Update()
     {
+        if (Input.GetKeyDown(KeyCode.RightShift))
+        {
+            speed = 20.0f;
+            horizontalInput = Input.GetAxis("Horizontal");
+            transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
+            verticalInput = Input.GetAxis("Vertical");
+            transform.Translate(Vector3.forward * verticalInput * Time.deltaTime * speed);
+            Debug.Log(speed);
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            speed = 1.0f;
+            horizontalInput = Input.GetAxis("Horizontal");
+            transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
+            verticalInput = Input.GetAxis("Vertical");
+            transform.Translate(Vector3.forward * verticalInput * Time.deltaTime * speed);
+            Debug.Log(speed);
+        }
         horizontalInput = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
         verticalInput = Input.GetAxis("Vertical");
